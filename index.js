@@ -6,14 +6,20 @@ import { log } from 'console';
 import { writeFile, mkdir, readFile, access } from 'fs/promises';
 import { constants } from 'fs';
 
+
+import displayIntroAndHelp from './intro-help.js'
+
 const dataDir = join(homedir(), 'clyper_data');
 const dataFile = join(dataDir, 'clyper_data.json');
 
-clack.intro(`${chalk.red.bgCyan(' CLIPPY ')}`)
+// displayIntroAndHelp()
+
+clack.intro(`${chalk.black.bgWhite(' Enter Your Key with the Text you want to copy ')}`)
+
 
 function checkProcessCancel(value) {
 	if (clack.isCancel(value)) {
-		log("Entry cancelled")
+		clack.outro(`${chalk.bgRed.bold(`${chalk.black(' Entry cancelled ')}`)}`)
 		process.exit();
 	}
 }
@@ -46,6 +52,8 @@ const description =
 
 // Ensure directory exists before reading/writing
 await mkdir(dataDir, { recursive: true });
+
+
 
 let existingData = {};
 try {
