@@ -6,8 +6,8 @@ import { log } from 'console';
 import { writeFile, mkdir, readFile, access } from 'fs/promises';
 import { constants } from 'fs';
 
-const dataDir = join(homedir(), 'clippy_data');
-const dataFile = join(dataDir, 'data.json');
+const dataDir = join(homedir(), 'clyper_data');
+const dataFile = join(dataDir, 'clyper_data.json');
 
 clack.intro(`${chalk.red.bgCyan(' CLIPPY ')}`)
 
