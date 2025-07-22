@@ -7,14 +7,14 @@ import { writeFile, mkdir, readFile, access } from 'fs/promises';
 import { constants } from 'fs';
 
 
-import displayIntroAndHelp from './intro-help.js'
+import displayIntroAndHelp from './help.js'
 
 const dataDir = join(homedir(), 'clyper_data');
 const dataFile = join(dataDir, 'clyper_data.json');
 
-// displayIntroAndHelp()
+displayIntroAndHelp()
 
-clack.intro(`${chalk.black.bgWhite(' Enter Your Key with the Text you want to copy ')}`)
+clack.intro(`${chalk.bgBlueBright(`${chalk.white(' Enter Your Key with the Text you want to copy ')}`)}`);
 
 
 function checkProcessCancel(value) {
