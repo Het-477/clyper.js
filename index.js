@@ -13,7 +13,7 @@ import displayIntroAndHelp from './help.js'
 const dataDir = join(homedir(), 'clyper_data');
 const dataFile = join(dataDir, 'clyper_data.json');
 
-// displayIntroAndHelp()
+displayIntroAndHelp()
 
 // All functions to input data 
 clack.intro(`${chalk.bgBlueBright(`${chalk.white(' Enter Your Key with the Text you want to copy ')}`)}`);
@@ -93,6 +93,6 @@ async function listAllEntries() {
 	}
 }
 
-listAllEntries()
+// listAllEntries()
 
 clack.outro(` You'r Done! `)
